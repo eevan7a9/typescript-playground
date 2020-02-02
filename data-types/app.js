@@ -32,22 +32,38 @@ var student = {
 var studentAbility;
 studentAbility = student.ability;
 console.log(studentAbility);
-var RANK;
-(function (RANK) {
-    RANK[RANK["ADMIN"] = 0] = "ADMIN";
-    RANK[RANK["ADVISOR"] = 1] = "ADVISOR";
-    RANK[RANK["CHEATER"] = 2] = "CHEATER";
-})(RANK || (RANK = {}));
+// better way of holding a predefined value
+var Rank;
+(function (Rank) {
+    Rank[Rank["ADMIN"] = 0] = "ADMIN";
+    Rank[Rank["ADVISOR"] = 1] = "ADVISOR";
+    Rank[Rank["CHEATER"] = 2] = "CHEATER";
+})(Rank || (Rank = {}));
 //  we add type check to object key
 var teacher = {
     name: "jeraiya",
     age: 30,
     role: ["teach", 33],
-    rank: RANK.ADVISOR
+    rank: Rank.ADVISOR
 };
 // teacher.role = ["sd"] will cause error needs another number
 // teacher.role = [3, 32] will cause error needs string in key 0
 console.log(teacher);
-if (teacher.rank === RANK.ADVISOR) {
+if (teacher.rank === Rank.ADVISOR) {
     console.log("rank is Advisor");
 }
+//  UNION TYPES
+var combine = function (input1, input2) {
+    var result;
+    if (typeof input1 == "number" && typeof input2 == "number") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+};
+var combinedNumber = combine(34, 22);
+console.log(combinedNumber);
+var combinedString = combine("Dragon", 32);
+console.log(combinedString);
