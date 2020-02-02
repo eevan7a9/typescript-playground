@@ -35,6 +35,7 @@ studentAbility = student.ability;
 
 console.log(studentAbility);
 
+// ENUM & TUPIL *************************************************************************
 // better way of holding a predefined value
 enum Rank {
   ADMIN,
@@ -45,6 +46,7 @@ enum Rank {
 const teacher: {
   name: string;
   age: number;
+  //   role as tupil
   role: [string, number];
   rank: number;
 } = {
@@ -60,7 +62,8 @@ if (teacher.rank === Rank.ADVISOR) {
   console.log("rank is Advisor");
 }
 
-//  UNION TYPES
+//  UNION TYPES ***************************************************************************
+
 const combine = function(input1: number | string, input2: number | string) {
   let result: number | string;
   if (typeof input1 == "number" && typeof input2 == "number") {
