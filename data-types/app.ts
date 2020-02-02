@@ -38,9 +38,9 @@ console.log(studentAbility);
 // ENUM & TUPIL *************************************************************************
 // better way of holding a predefined value
 enum Rank {
-  ADMIN,
-  ADVISOR,
-  CHEATER
+  Admin,
+  Advisor,
+  Cheater
 }
 //  we add type check to object key
 const teacher: {
@@ -53,12 +53,12 @@ const teacher: {
   name: "jeraiya",
   age: 30,
   role: ["teach", 33],
-  rank: Rank.ADVISOR
+  rank: Rank.Advisor
 };
 // teacher.role = ["sd"] will cause error needs another number
 // teacher.role = [3, 32] will cause error needs string in key 0
 console.log(teacher);
-if (teacher.rank === Rank.ADVISOR) {
+if (teacher.rank === Rank.Advisor) {
   console.log("rank is Advisor");
 }
 
