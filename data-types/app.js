@@ -53,7 +53,6 @@ console.log(teacher);
 if (teacher.rank === Rank.ADVISOR) {
     console.log("rank is Advisor");
 }
-//  UNION TYPES & LITERAL TYPES *******************************************************************
 var combine = function (input1, input2, conversionAs) {
     var result;
     if ((typeof input1 == "number" && typeof input2 == "number") ||

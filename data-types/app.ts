@@ -62,14 +62,16 @@ if (teacher.rank === Rank.ADVISOR) {
   console.log("rank is Advisor");
 }
 
-//  UNION TYPES & LITERAL TYPES *******************************************************************
+//  UNION TYPES with ALIAS & LITERAL TYPES *******************************************************************
+type Combinable = number | string;
+type ConversionDescriptor = "number" | "string";
 
 const combine = function(
-  input1: number | string,
-  input2: number | string,
-  conversionAs: "number" | "string"
+  input1: Combinable,
+  input2: Combinable,
+  conversionAs: ConversionDescriptor
 ) {
-  let result: number | string;
+  let result: Combinable;
   if (
     (typeof input1 == "number" && typeof input2 == "number") ||
     conversionAs == "number"
