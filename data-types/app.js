@@ -32,6 +32,7 @@ var student = {
 var studentAbility;
 studentAbility = student.ability;
 console.log(studentAbility);
+// ENUM & TUPIL *************************************************************************
 // better way of holding a predefined value
 var Rank;
 (function (Rank) {
@@ -52,18 +53,19 @@ console.log(teacher);
 if (teacher.rank === Rank.ADVISOR) {
     console.log("rank is Advisor");
 }
-//  UNION TYPES
-var combine = function (input1, input2) {
+//  UNION TYPES & LITERAL TYPES *******************************************************************
+var combine = function (input1, input2, conversionAs) {
     var result;
-    if (typeof input1 == "number" && typeof input2 == "number") {
-        result = input1 + input2;
+    if ((typeof input1 == "number" && typeof input2 == "number") ||
+        conversionAs == "number") {
+        result = parseInt(input1.toString()) + parseInt(input2.toString());
     }
     else {
         result = input1.toString() + input2.toString();
     }
     return result;
 };
-var combinedNumber = combine(34, 22);
-console.log(combinedNumber);
-var combinedString = combine("Dragon", 32);
-console.log(combinedString);
+var combinedNumber = combine(34, 22, "number");
+console.log(combinedNumber); // 56
+var combinedString = combine("Dragon", 32, "string");
+console.log(combinedString); // Dragon32

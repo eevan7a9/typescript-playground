@@ -62,19 +62,26 @@ if (teacher.rank === Rank.ADVISOR) {
   console.log("rank is Advisor");
 }
 
-//  UNION TYPES ***************************************************************************
+//  UNION TYPES & LITERAL TYPES *******************************************************************
 
-const combine = function(input1: number | string, input2: number | string) {
+const combine = function(
+  input1: number | string,
+  input2: number | string,
+  conversionAs: "number" | "string"
+) {
   let result: number | string;
-  if (typeof input1 == "number" && typeof input2 == "number") {
-    result = input1 + input2;
+  if (
+    (typeof input1 == "number" && typeof input2 == "number") ||
+    conversionAs == "number"
+  ) {
+    result = parseInt(input1.toString()) + parseInt(input2.toString());
   } else {
     result = input1.toString() + input2.toString();
   }
   return result;
 };
 
-const combinedNumber = combine(34, 22);
+const combinedNumber = combine(34, 22, "number");
 console.log(combinedNumber); // 56
-const combinedString = combine("Dragon", 32);
+const combinedString = combine("Dragon", 32, "string");
 console.log(combinedString); // Dragon32
