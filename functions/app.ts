@@ -21,3 +21,17 @@ consoleSomething();
 let addSomething: (x: number, b: number) => string;
 addSomething = add;
 console.log(addSomething(33, 333));
+
+// function withh callback
+const addHandler = function(
+  num1: number,
+  num2: number,
+  callBack: (num: number) => void
+) {
+  const result = num1 + num2;
+  callBack(result);
+};
+
+addHandler(2333, 32, number => {
+  console.log(number);
+});
