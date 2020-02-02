@@ -36,21 +36,21 @@ console.log(studentAbility);
 // better way of holding a predefined value
 var Rank;
 (function (Rank) {
-    Rank[Rank["ADMIN"] = 0] = "ADMIN";
-    Rank[Rank["ADVISOR"] = 1] = "ADVISOR";
-    Rank[Rank["CHEATER"] = 2] = "CHEATER";
+    Rank[Rank["Admin"] = 0] = "Admin";
+    Rank[Rank["Advisor"] = 1] = "Advisor";
+    Rank[Rank["Cheater"] = 2] = "Cheater";
 })(Rank || (Rank = {}));
 //  we add type check to object key
 var teacher = {
     name: "jeraiya",
     age: 30,
     role: ["teach", 33],
-    rank: Rank.ADVISOR
+    rank: Rank.Advisor
 };
 // teacher.role = ["sd"] will cause error needs another number
 // teacher.role = [3, 32] will cause error needs string in key 0
 console.log(teacher);
-if (teacher.rank === Rank.ADVISOR) {
+if (teacher.rank === Rank.Advisor) {
     console.log("rank is Advisor");
 }
 var combine = function (input1, input2, conversionAs) {
@@ -68,3 +68,15 @@ var combinedNumber = combine(34, 22, "number");
 console.log(combinedNumber); // 56
 var combinedString = combine("Dragon", 32, "string");
 console.log(combinedString); // Dragon32
+// UNKNOWN
+var inputUser;
+var food;
+var toBeAssigned;
+inputUser = "tacco";
+food = "burger";
+toBeAssigned = food;
+// toBeAssigned = inputUser; error unknown cant be directly assigned to other variable
+if (typeof inputUser === "string") {
+    toBeAssigned = inputUser;
+}
+console.log(toBeAssigned);

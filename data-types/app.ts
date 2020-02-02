@@ -87,3 +87,16 @@ const combinedNumber = combine(34, 22, "number");
 console.log(combinedNumber); // 56
 const combinedString = combine("Dragon", 32, "string");
 console.log(combinedString); // Dragon32
+
+// UNKNOWN
+let inputUser: unknown;
+let food: any;
+let toBeAssigned: string;
+inputUser = "tacco";
+food = "burger";
+toBeAssigned = food;
+// toBeAssigned = inputUser; error unknown cant be directly assigned to other variable
+if (typeof inputUser === "string") {
+  toBeAssigned = inputUser;
+}
+console.log(toBeAssigned);
